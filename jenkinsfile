@@ -1,0 +1,11 @@
+node{
+   stage('SCM Checkout'){
+     git 'https://github.com/NagabandiSarika/declarative'
+   }
+   stage('Build'){
+       echo "Hello world"
+   }
+   stage('Email Notification'){
+       emailext body: 'jenkins build', subject: 'sending a mail', to: 'sarika.n.2499@gmail.com'
+   }
+}
